@@ -6,13 +6,13 @@ namespace POmelchenko;
  * Class Second
  * @package POmelchenko
  */
-class Second
+class Arr
 {
     /**
      * @param array $array
      * @return int
      */
-    public static function arrayRowSum(array $array): int
+    public static function rowSum(array $array): int
     {
         return array_sum($array);
     }
@@ -21,11 +21,11 @@ class Second
      * @param array $array
      * @return array
      */
-    public static function arrayRowsSum(array $array): array
+    public static function rowsSum(array $array): array
     {
         $res = [];
         foreach ($array as $key => $row) {
-            $res[$key] = self::arrayRowSum($row);
+            $res[$key] = self::rowSum($row);
         }
 
         return $res;
@@ -35,9 +35,9 @@ class Second
      * @param array $array
      * @return array
      */
-    public static function arrayColsSum(array $array): array
+    public static function colsSum(array $array): array
     {
-        return self::arrayRowsSum(self::rotateArray($array));
+        return self::rowsSum(self::rotate($array));
     }
 
     /**
@@ -45,7 +45,7 @@ class Second
      * @param bool $inverse
      * @return array
      */
-    public static function rotateArray(array $array, $inverse = false): array
+    public static function rotate(array $array, $inverse = false): array
     {
         array_unshift($array, null);
         $array = array_map(...$array);

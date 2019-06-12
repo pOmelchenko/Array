@@ -3,24 +3,24 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use POmelchenko\Second;
+use POmelchenko\Arr;
 
 class SecondTest extends TestCase
 {
     public function testArrayRowSum(): void
     {
-        $this->assertEquals(6, Second::arrayRowSum([1, 2, 3]));
+        $this->assertEquals(6, Arr::rowSum([1, 2, 3]));
     }
 
     public function testArrayRowsSum(): void
     {
-        $this->assertEquals([6, 9, 15], Second::arrayRowsSum([
+        $this->assertEquals([6, 9, 15], Arr::rowsSum([
             [1, 2, 3],
             [2, 3, 4],
             [4, 5, 6],
         ]));
 
-        $this->assertEquals(['one' => 6, 'two' => 9, 'three' => 15], Second::arrayRowsSum([
+        $this->assertEquals(['one' => 6, 'two' => 9, 'three' => 15], Arr::rowsSum([
             'one' => [1, 2, 3],
             'two' => [2, 3, 4],
             'three' => [4, 5, 6],
@@ -29,7 +29,7 @@ class SecondTest extends TestCase
 
     public function testArrayColsSum(): void
     {
-        $this->assertEquals([7, 10, 13], Second::arrayColsSum([
+        $this->assertEquals([7, 10, 13], Arr::colsSum([
             [1, 2, 3],
             [2, 3, 4],
             [4, 5, 6],
@@ -44,7 +44,7 @@ class SecondTest extends TestCase
                 [2, 3, 5],
                 [3, 4, 6],
             ],
-            Second::rotateArray([
+            Arr::rotate([
                 [1, 2, 3],
                 [2, 3, 4],
                 [4, 5, 6],
@@ -57,7 +57,7 @@ class SecondTest extends TestCase
                 [5, 3, 2],
                 [6, 4, 3],
             ],
-            Second::rotateArray([
+            Arr::rotate([
                 [1, 2, 3],
                 [2, 3, 4],
                 [4, 5, 6],
