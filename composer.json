@@ -1,7 +1,7 @@
 {
-  "name": "pomelchenko/second",
+  "name": "pomelchenko/array",
   "type": "library",
-  "description": "Math",
+  "description": "Array",
   "minimum-stability": "stable",
   "license": "MIT",
   "require": {
